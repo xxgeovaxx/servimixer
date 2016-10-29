@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block main %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Detalle de la encuesta #{{ object.id }}
+                <a href="{% url 'inicio' %}" class="btn btn-info btn-lg">
+                    volver al inicio <i class="fa fa-home"></i>
+                </a>
+            </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <td>
+                        Nombre completo
+                    </td>
+                    <td>
+                        {{ object.nombre_completo }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        identificacion
+                    </td>
+                    <td>
+                        {{ object.identificacion }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        telefono
+                    </td>
+                    <td>
+                        {{ object.telefono }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        correo electronico
+                    </td>
+                    <td>
+                        {{ object.correo_electronico }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        departamento
+                    </td>
+                    <td>
+                        {{ object.departamento }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        cargo
+                    </td>
+                    <td>
+                        {{ object.cargo }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        desea usted una capacitacion laboral?
+                    </td>
+                    <td>
+                        {% if object.capacitacion %}
+                            <i class="fa fa-check" style="color: green"></i>
+                        {% else %}
+                            <i class="fa fa-close" style="color: red"></i>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Area de capacitacion
+                    </td>
+                    <td>
+                        {{ object.curso }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Area de labores
+                    </td>
+                    <td>
+                        {{ object.area }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tema
+                    </td>
+                    <td>
+                        {{ object.tema }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        motivado para seguir adelante
+                    </td>
+                    <td>
+                        {% if object.motivado %}
+                            <i class="fa fa-check" style="color: green"></i>
+                        {% else %}
+                            <i class="fa fa-close" style="color: red"></i>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Motivacion
+                    </td>
+                    <td>
+                        {{ object.motivacion }}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

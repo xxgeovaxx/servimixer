@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block main %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Bienvenido</h1>
+        </div>
+    </div>
+    <div class="row">
+        {% load widget_tweaks %}
+        <div class="col-md-12">
+            <form method="POST" class="form-horizontal">{% csrf_token %}
+                <div class="form-body">
+                    {% for field in form %}
+                        <div class="form-group form-md-line-input {% if field.errors %} has-error {% elif field.value %} has-success {% endif %}">
+                            <label class="col-md-3 control-label">
+                                {{ field.label }}
+                            </label>
+                            <div class="col-md-9">
+                                <div class="input-icon right">
+                                    {% render_field field class="form-control" placeholder=field.label %}
+                                    <div class="form-control-focus"></div>
+                                    <span class="help-block">
+                            {{ field.help_text }}
+                                        {% for error in field.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                        </span>
+                                    {% if field.errors %}
+                                        <i class="fa fa-warning"></i>
+                                    {% elif field.value %}
+                                        <i class="fa fa-check"></i>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div align="center">
+                        <br>
+                        <a type="submit" id="lock" href="javascript: history.go(-1)" data-loading-text="Cancelando..."
+                           class="btn btn-danger">
+                            Cancelar <i class="fa fa-close"></i>
+                        </a>
+                        <button class="btn green" type="submit">
+                            Guardar <i class="fa fa-save"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br><br><br><br>
+{% endblock %}
