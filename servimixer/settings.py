@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'servimixer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd10hdd2b1i6sus',
-        'USER': 'rnalmtkhcnjsgh',
-        'PASSWORD': 'K1Yh-zSeI4qkS0oX5b3Jt4dKgk',
-        'HOST': 'ec2-54-235-250-156.compute-1.amazonaws.com',
+        'NAME': 'db6ti372mnmsoi',
+        'USER': 'qjhouvlzgbwkke',
+        'PASSWORD': 'WWfpWQ6nfC_ug_TlIJ_cBAdHJ9',
+        'HOST': 'ec2-50-17-220-39.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
